@@ -1,22 +1,37 @@
+<?php
+
+$con= mysqli_connect("localhost","phpmyadmin","Re********","phpmyadmin");
+if(!$con)
+{
+die("Could not connect".mysqli_error());
+}
+
+?>
+
 <!DOCTYPE html>
-<html>
-<head>
-<title>Registration Form</title>
+	<html>
+		<head>
+			<title>
+				Registration Form
+			</title>
 <style>
-body{
+body
+{
 background:"powederblue";
+background-image: url('iot10.jpg');
 }
 .wrap{
-	width:350px;
+	width:400px;
 	margin:auto;
 	bakground-color:#ffff46;
+	background-image: url('white1.jpg');
 	margin-top:50px;
 	padding:5px;
 }
 form{
 	padding:10px;
 	font-family:arial;
-	border:1px dotted black;
+	border:1px solid black;
 }
 h2{
 	text-align:center;
@@ -52,30 +67,74 @@ border-radius:5px;
 }
 </style>
 </head>
+
+
 <body>
-<div class="wrap">
-<form>
-<h2>REGISTRATION FORM</h2>
-<input type="text" name="flname" placeholder= " Full Name">
-<input type="text" name="uid" placeholder= " User ID"><br>
-<input type="date" name="dob" placeholder= " Date of Birth">
-<input type="radio"name="male" value="Male">Male
-<input type="radio"name=female" value="Female">Female<br>
-<input type="text" name="adharno" placeholder=" Aadhaar No.">
-<input type="tel" name="mobno" placeholder=" Mobile No.">
-<input type="text" name="addr" placeholder=" Address">
-<input type="password" name="password"placeholder=" Password">
-<input type="password" name="Confirm Password" placeholder=" Confirm Password"><br>
+	<div class="wrap">
+		
+		<form method="post">
+		
+			<h2>REGISTRATION FORM</h2>
+
+<input type="text" name="name" id="name" placeholder= " Full Name" required>
+
+<input type="text" name="userid" id="userid" placeholder= " User ID" required><br>
+
+<input type="radio" name="gender" id="gender" value="Male" placeholder = "Male" required> Male
+
+<input type="radio" name="gender" id="gender" value="Female" placeholder = "Female" required> Female
 <br>
-<input type="submit" name="Submit"value="SUBMIT">
-</form>
-</div>
-</body>
-</html>
+<label>&nbsp Date of Birth</label>
+<input type="date" name="dob" id="dob" required>
 
+<input type="text" name="aadhaar" id="aadhaar" placeholder=" Aadhaar No." required>
 
+<input type="tel" name="mobile" id="mobile" placeholder=" Mobile No." required>
+
+<input type="text" name="address" id="address" placeholder=" Address" required>
+
+<input type="password" name="pass" id="pass" placeholder=" Password" required>
+
+<input type="password" name="cpass" id="cpass" placeholder=" Confirm Password" required><br>
+
+<br>
+
+<input type="submit" name="signup" id="signup" value="SIGN UP">
+
+			</form>
+		</body>
+	</html>
 </style>
-
 </head>
-<body>
-<div class ="wrap">
+
+<?php
+if(isset($_POST['signup']))
+{
+  echo "Registered Successfully";
+
+    $name = $_POST['name'];
+	$userid = $_POST['userid'];   
+	$gender = $_POST['gender'];
+	$dob = $_POST['dob'];
+    $aadhaar = $_POST['aadhaar'];
+    $mobile = $_POST['mobile'];
+	$address = $_POST['address'];	
+	$pass = $_POST['pass'];
+	$cpass = $_POST['cpass'];
+	/*$today = date("Y-m-d");*/
+	$diff = (date('Y')-date('Y',strtotime($dob)));
+	
+	
+	
+	
+$query = "INSERT INTO `BusUserData`(`name`, `userid`, `gender`,`dob`,`age`,`aadhaar`, `mobile`, `address`, `pass`, `cpass`) VALUES ('$name','$userid','$gender', '$dob','$diff','$aadhaar','$mobile','$address','$pass','$cpass')";
+
+$rs = mysqli_query($con,$query);
+
+echo '<script type="text/javascript">alert("'.$fname.' Registered successfully")</script>';
+//;window.location=\'sup.html\';
+//header("location:mainpg.php");
+}
+?>
+
+
