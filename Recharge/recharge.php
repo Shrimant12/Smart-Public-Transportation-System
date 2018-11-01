@@ -1,11 +1,11 @@
 <?php
-/*
+
 $con= mysqli_connect("localhost","phpmyadmin","Reshma@92mo","phpmyadmin");
 if(!$con)
 {
 die("Could not connect".mysqli_error());
 }
-*/
+
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +86,7 @@ border-radius:5px;
 
 <input type="text" name="userid" id="userid" placeholder= " User ID"><br>
 
-<input type="text" name="userid" id="amount" placeholder= " ADD AMOUNT " ><br>
+<input type="text" name="recharge" id="recharge" placeholder= " Recharge " ><br>
 
 <br>
 
@@ -107,17 +107,12 @@ if(isset($_POST['signup']))
 {
  # echo "Rechargred Successfully";
 
-    $name = $_POST['name'];
-	$userid = $_POST['userid'];   
-	$gender = $_POST['gender'];
-    $aadhaar = $_POST['aadhaar'];
-    $mobile = $_POST['mobile'];
-	$address = $_POST['address'];	
-	$pass = $_POST['pass'];
-	$cpass = $_POST['cpass'];
+	$userid = $_POST['userid']; 
 	
+	$recharge = $_POST['recharge'];
 	
-$query = "INSERT INTO `BusUserData`(`name`, `userid`, `gender`, `aadhaar`, `mobile`, `address`, `pass`, `cpass`) VALUES ('$name','$userid','$gender','$aadhaar','$mobile','$address','$pass','$cpass')";
+	$query = "UPDATE `BusUserData` SET recharge=recharge+'$recharge' WHERE userid='$userid'";
+	
 
 $rs = mysqli_query($con,$query);
 
@@ -126,6 +121,5 @@ echo '<script type="text/javascript">alert("'.$fname.' Rechargred successfully")
 //header("location:mainpg.php");
 }
 ?>
-
 
 
