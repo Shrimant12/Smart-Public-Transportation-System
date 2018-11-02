@@ -1,6 +1,6 @@
 <?php
 
-$con= mysqli_connect("localhost","phpmyadmin","Re********","phpmyadmin");
+$con= mysqli_connect("localhost","phpmyadmin","Reshma@92mo","phpmyadmin");
 if(!$con)
 {
 die("Could not connect".mysqli_error());
@@ -47,7 +47,7 @@ border-radius:5px;
 border:"black";
 }
 input[type=text],input[type=email],input[type=number],input[type=password],input[type=tel]{
-width:90%
+	width:90%
 }
 input[type=submit]{
 width:95%;
