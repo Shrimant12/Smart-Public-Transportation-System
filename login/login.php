@@ -30,50 +30,87 @@ if(!$con)
 <body style="background-image: url('iot10.jpg')">
 
 	<style>
-		form{border: 1px  solid #ff0000;}
+		
+h1{
+	text-align:center;
+	background:orange;
+	color:black;
+	padding:10px;
+	border-radius:10px; 
+}
 
-		.button
-		{
-		background-color: #4CAF50;
-		border: none;
-		color: white;
-		padding: 15px 32px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-size: 16px;
-		margin: 4px 2px;
-		cursor: pointer;
+		body
+{
+background:"powederblue";
+background-image: url('iot10.jpg');
+}
+.wrap{
+	width:400px;
+	margin:auto;
+	bakground-color:#ffff46;
+	background-image: url('white1.jpg');
+	margin-top:50px;
+	padding:5px;
+	
+}
+form{
+	padding:10px;
+	font-family:arial;
+	border:1px solid black;
+}
+		
 
-		}
-
+input{
+padding:10px;
+margin:5px;
+border-radius:5px;
+border:"black";
+}
+input[type=text],input[type=email],input[type=number],input[type=password],input[type=tel]{
+width:90%
+}
+input[type=submit]{
+width:90%;
+background:orange;
+cursor:pointer;
+font-size:18px;
+font-weight:bold;
+color:white
+}
+input[type=submit]:hover{
+background:yellow;
+}
+select{
+padding:10px;
+width:32%;
+border-radius:5px;
+}
+		
 	</style>
-
-<div class="container" align="center" style=" margin-top:170px; background-image: url('white1.jpg');">
-<div style="width:100%;">
-
-<form method="post">
-
 <h1 align="center">
   <b>
     Welcome to Smart Public Transportation System
   </b>
 </h1>
+<br>
 
 <br>
-  <h3  align="center">Username
-    <input type="text" id="uname" name="uname" required>
-  </h3>
+
+<div class="wrap" align="center">
 
 
-  <h3 align="center">Password
-    <input type="password" id="pass" name="pass" required>
-  </h3>
+<form method="post">
 
-  <h5 align="center">
+    <input type="text" id="uname" placeholder="Username" name="uname" required>
+    <input type="password" id="pass" placeholder="Password" name="pass" required>
+
     <input type="submit" class="button" value="Login" name="Login">
-  </h5>
- 
+
+</form>
+</div>
+
+</body>
+</html>  
 
 <?php
       if(isset($_POST['Login']))
@@ -111,7 +148,3 @@ if(!$con)
 ?>
 
 
-
-</form>
-</body>
-</html>
