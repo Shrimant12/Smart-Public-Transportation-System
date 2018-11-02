@@ -39,10 +39,12 @@
 
 <h1 align = "center">
   <b>
-    Smart Public Transportation System<br>
+    <marquee>Smart Public Transportation System
+    </marquee>
+    <br>
 
-      <input value="Login" class="button" name="Login" type="submit">
-      <input value="Signup" class="button" name="Signup" type="submit">
+      <input value="Admin Login" class="button" name="Login" type="submit">
+      <input value="Admin Signup" class="button" name="Signup" type="submit">
   </b>
 </h1>
 
