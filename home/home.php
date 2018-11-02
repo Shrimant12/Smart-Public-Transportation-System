@@ -2,11 +2,16 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
 <style>
 * {box-sizing: border-box;}
 
 body {
-  background-image: url("pt2.jpg");
+  background-image: url("iot10.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   margin: 0;
@@ -45,6 +50,20 @@ body {
 .topnav .search-container {
   float: right;
 }
+
+
+h1{
+	text-align:center;
+	background:orange;
+	color:black;
+	padding:10px;
+	border-radius:10px; 
+}
+
+
+
+
+
 
 .topnav input[type=text] {
   padding: 6px;
@@ -106,16 +125,20 @@ body {
      </i>
      </button>
      -->
-   
+
      
     </form>
   </div>
 </div>
 
-<div style="padding-left:16px">
-  <h2>Smart Public Transportation System</h2>
-  
-</div>
+<h1 align="center">
+      <b>
+          Welcome to Smart Public Transportation System
+      </b>
+    </h1>
+
+
+
 
 </body>
 </html>
