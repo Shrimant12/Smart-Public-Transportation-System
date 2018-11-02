@@ -116,7 +116,7 @@ if(isset($_POST['signup']))
 
 $rs = mysqli_query($con,$query);
 
-echo '<script type="text/javascript">alert("'.$fname.' Rechargred successfully")</script>';
+echo '<script type="text/javascript">alert("'.$fname.' Recharged successfully")</script>';
 //;window.location=\'sup.html\';
 //header("location:mainpg.php");
 }
